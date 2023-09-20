@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "799700127271",
+    "project_id": "houserentapp-8800e",
+    "storage_bucket": "houserentapp-8800e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:799700127271:android:4bdb0277e145fadd9ec802",
+        "android_client_info": {
+          "package_name": "com.anna.houserentapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-ItHUWVSQnrVMUgXeo1aNCmc1Zxu9izc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
