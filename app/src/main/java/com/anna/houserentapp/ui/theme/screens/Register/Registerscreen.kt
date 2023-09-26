@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Email
@@ -35,6 +36,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.airbnb.lottie.compose.LottieAnimation
+import com.airbnb.lottie.compose.LottieCompositionSpec
+import com.airbnb.lottie.compose.animateLottieCompositionAsState
+import com.airbnb.lottie.compose.rememberLottieComposition
+import com.anna.houserentapp.R
 import com.anna.houserentapp.data.AuthViewModel
 import com.anna.houserentapp.navigation.ROUTE_REGISTER
 
@@ -45,6 +51,19 @@ fun RegisterScreen(navController: NavHostController){
     var pass by remember { mutableStateOf(TextFieldValue("")) }
     var confirmpass by remember { mutableStateOf(TextFieldValue("")) }
     var context= LocalContext.current
+
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier
+            .padding(top=20.dp)
+    ){
+        Spacer(modifier = Modifier.height(50.dp))
+        val composition by rememberLottieComposition(spec = LottieCompositionSpec.RawRes(R.raw.animation_lmrmwnsa))
+        val progress by animateLottieCompositionAsState(composition )
+
+        LottieAnimation(composition , progress,
+            modifier =Modifier.size(50.dp))
+    }
 
 
 

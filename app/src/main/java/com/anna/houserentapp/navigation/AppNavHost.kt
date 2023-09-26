@@ -1,24 +1,27 @@
 package com.anna.houserentapp.navigation
 
-import android.window.SplashScreen
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.anna.houserentapp.Splashscreen
 import com.anna.houserentapp.ui.theme.screens.Register.RegisterScreen
-import com.anna.houserentapp.ui.theme.screens.home.Homescreen
+import com.anna.houserentapp.ui.theme.screens.booking.BookingScreen
+import com.anna.houserentapp.ui.theme.screens.contactus.ContactUs
+//import com.anna.houserentapp.ui.theme.screens.contactus.Contactus
+import com.anna.houserentapp.ui.theme.screens.home.HomeScreen
+//import com.anna.houserentapp.ui.theme.screens.home.Homescreen
 import com.anna.houserentapp.ui.theme.screens.login.Loginscreen
 
 
-import com.anna.houserentapp.ui.theme.screens.profile.AddProfile
-import com.anna.houserentapp.ui.theme.screens.profile.Updateprofile
-import com.anna.houserentapp.ui.theme.screens.profile.Viewprofile
+import com.anna.houserentapp.ui.theme.screens.profiless.AddProfile
+import com.anna.houserentapp.ui.theme.screens.profiless.Updateprofile
+
+import com.anna.houserentapp.ui.theme.screens.profiless.Viewprofile
 
 @Composable
-fun AppNavHost(modifier: Modifier = Modifier, navController: NavHostController = rememberNavController(), startDestination:String= ROUTE_LOGIN) {
+fun AppNavHost(modifier: Modifier = Modifier, navController: NavHostController = rememberNavController(), startDestination:String= ROUTE_HOME) {
 
     NavHost(
         navController = navController,
@@ -34,7 +37,7 @@ fun AppNavHost(modifier: Modifier = Modifier, navController: NavHostController =
         }
 
         composable(ROUTE_HOME) {
-            Homescreen(navController)
+            HomeScreen(navController)
 
         }
         composable(ROUTE_ADD_PROFILE) {
@@ -49,6 +52,14 @@ fun AppNavHost(modifier: Modifier = Modifier, navController: NavHostController =
         composable(ROUTE_UPDATE_PROFILE + "/{id}") { passedData ->
             Updateprofile(navController, passedData.arguments?.getString("id")!!)
         }
+        composable(ROUTE_CONTACTUS){
+            ContactUs(navController)
+        }
+        composable(ROUTE_BOOKING){
+            BookingScreen(navController)
+        }
+
+
 
 
     }

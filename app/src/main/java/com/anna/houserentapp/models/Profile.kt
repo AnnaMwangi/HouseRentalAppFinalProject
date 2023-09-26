@@ -4,13 +4,15 @@ class Profile{
     var name:String=""
     var housenumber:String=""
     var contact:String=""
-    var numberoffamilymembers:String=""
+    var id:String=""
 
-    constructor(name:String,housenumber:String,contact:String,numberoffamilymembers:String){
+    constructor(name:String,housenumber:String,contact:String,id:String){
         this.name=name
         this.housenumber=housenumber
         this.contact=contact
-        this.numberoffamilymembers=numberoffamilymembers
+        this.id=id
     }
-    constructor()
+    constructor(){
+
+    }
 }
