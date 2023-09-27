@@ -38,6 +38,7 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 //import com.airbnb.lottie.R
@@ -48,7 +49,7 @@ import com.airbnb.lottie.compose.rememberLottieComposition
 import com.anna.houserentapp.R
 import com.anna.houserentapp.data.AuthViewModel
 import com.anna.houserentapp.navigation.ROUTE_REGISTER
-
+import com.anna.houserentapp.navigation.ROUTE_VIEW_PROFILE
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -117,6 +118,7 @@ fun Loginscreen(navController: NavHostController){
         Button(onClick = {
             val yyy= AuthViewModel(navController, context)
             yyy.login(email.text.trim(),pass.text.trim())
+
         },
             colors =ButtonDefaults.buttonColors(Color.Black),
             modifier = Modifier.fillMaxWidth()) {
@@ -129,7 +131,7 @@ fun Loginscreen(navController: NavHostController){
         },
             colors = ButtonDefaults.buttonColors(Color.Black))
          {
-            Text(text = "Don't have a profile?Click to Register")
+            Text(text = "Don't have an account?Click to Register")
 
         }
     }

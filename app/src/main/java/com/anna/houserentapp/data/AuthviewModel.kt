@@ -8,6 +8,7 @@ import com.anna.houserentapp.models.User
 import com.anna.houserentapp.navigation.ROUTE_HOME
 import com.anna.houserentapp.navigation.ROUTE_LOGIN
 import com.anna.houserentapp.navigation.ROUTE_REGISTER
+import com.anna.houserentapp.navigation.ROUTE_VIEW_PROFILE
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 
@@ -45,7 +46,7 @@ class AuthViewModel(var navController: NavHostController, var context: Context){
                         if (it.isSuccessful) {
                             Toast.makeText(context, "Registered Successfully", Toast.LENGTH_LONG)
                                 .show()
-                            navController.navigate(ROUTE_HOME)
+                            navController.navigate(ROUTE_VIEW_PROFILE)
 
                         } else {
                             Toast.makeText(context, "${it.exception!!.message}", Toast.LENGTH_LONG)
@@ -70,7 +71,7 @@ class AuthViewModel(var navController: NavHostController, var context: Context){
             progress.dismiss()
             if (it.isSuccessful){
                 Toast.makeText(context,"Succeffully Logged in", Toast.LENGTH_LONG).show()
-                navController.navigate(ROUTE_HOME)
+                navController.navigate(ROUTE_VIEW_PROFILE)
 //                navController.navigate(ROUTE_REGISTER)TO TAKE YOU TO A DIIFFERNT PAGE
             }else{
                 Toast.makeText(context,"${it.exception!!.message}", Toast.LENGTH_LONG).show()

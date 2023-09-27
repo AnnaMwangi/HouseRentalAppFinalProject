@@ -42,6 +42,7 @@ import com.airbnb.lottie.compose.animateLottieCompositionAsState
 import com.airbnb.lottie.compose.rememberLottieComposition
 import com.anna.houserentapp.R
 import com.anna.houserentapp.data.AuthViewModel
+import com.anna.houserentapp.navigation.ROUTE_LOGIN
 import com.anna.houserentapp.navigation.ROUTE_REGISTER
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -144,11 +145,11 @@ fun RegisterScreen(navController: NavHostController){
         }
         Spacer(modifier = Modifier.height(20.dp))
         Button(onClick = {
-            navController.navigate(ROUTE_REGISTER)
+            navController.navigate(ROUTE_LOGIN)
         },
         colors = ButtonDefaults.buttonColors(Color.Black)
         ) {
-            Text(text = "Have an account?Click to Login")
+            Text(text = "Already have a landlord account?Click to Login")
 
         }
     }

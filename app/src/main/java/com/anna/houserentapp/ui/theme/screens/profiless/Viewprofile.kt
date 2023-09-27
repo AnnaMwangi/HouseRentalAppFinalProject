@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateListOf
@@ -48,10 +49,10 @@ fun Viewprofile(navController:NavHostController) {
                 .fillMaxSize(),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text(text = "All products",
+            Text(text = "All profiles",
                 fontSize = 30.sp,
                 fontFamily = FontFamily.Cursive,
-                color = Color.Red)
+                color = Color.Black)
 
             Spacer(modifier = Modifier.height(20.dp))
             LazyColumn(){
@@ -91,12 +92,16 @@ fun ProfileItem(name:String, housenumber:String, contact:String, id:String,
         Text(text = contact)
         Button(onClick = {
             profileRepository.deleteProfile(id)
-        }) {
+        },
+            colors = ButtonDefaults.buttonColors(Color.Black),
+            modifier = Modifier.fillMaxWidth()) {
             Text(text = "Delete")
         }
         Button(onClick = {
             navController.navigate(ROUTE_UPDATE_PROFILE+"/$id")
-        }) {
+        },colors = ButtonDefaults.buttonColors(Color.Black),
+            modifier = Modifier.fillMaxWidth()
+            ) {
             Text(text = "Update")
         }
     }

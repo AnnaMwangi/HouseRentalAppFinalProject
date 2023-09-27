@@ -59,6 +59,17 @@ fun HomeScreen(navController: NavHostController) {
             Text(text = "Book with us a beautiful home from any high-end estates ")
 
         }
+        Button(
+            onClick = {
+                navController.navigate(ROUTE_LOGIN)
+            },
+            colors = ButtonDefaults.buttonColors(Color.Black),
+            modifier = Modifier.fillMaxWidth()
+        )
+        {
+            Text(text = "Landlords Login Page")
+
+        }
         Spacer(modifier = Modifier.height(30.dp))
         Text(
             text = "Want to rent your dream home?Rentishwa has got you covered",

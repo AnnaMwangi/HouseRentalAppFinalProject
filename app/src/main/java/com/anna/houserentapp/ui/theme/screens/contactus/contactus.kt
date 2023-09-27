@@ -129,6 +129,23 @@ fun ContactUs(navController: NavHostController) {
                 fontWeight = FontWeight.Bold,
                 fontSize = 20.sp)
         }
+        Spacer(modifier = Modifier.height(40.dp))
+        OutlinedButton(onClick = {
+            val shareIntent = Intent(Intent.ACTION_SEND)
+            shareIntent.type = "text/plain"
+            shareIntent.putExtra(Intent.EXTRA_TEXT, "Check out this is our company")
+            mContext.startActivity(Intent.createChooser(shareIntent, "Share"))
+        },
+            modifier = Modifier
+                .size(width = 380.dp, height = 70.dp)
+                .padding(start = 20.dp, end = 20.dp, top = 20.dp),
+            shape = CutCornerShape(5.dp), border = BorderStroke(3.dp, Color.Black)
+        ) {
+            Text(text = "SHARE",
+                color = Color.Black,
+                fontWeight = FontWeight.Bold,
+                fontSize = 20.sp)
+        }
 
 
 
